@@ -328,6 +328,52 @@
       </div>
     </div>
 
+    <footer class="footer">
+      <div class="container footer-container">
+        <a href="#" id="openContacts">Контактна інформація</a>
+        <a href="#" id="openTerms">Правила та умови</a>
+        <a href="ДОГОВІР_про_надання_психологічних_послуг.docx" target="_blank">
+          Договір (завантажити)
+        </a>
+      </div>
+    </footer>
+
+    <!-- CONTACTS MODAL -->
+    <div class="modal" id="contactsModal">
+      <div class="modal-content">
+        <span class="close contacts-close">&times;</span>
+        <h2>Контактна інформація</h2>
+
+        <p><strong>Єлецька Євгенія Олександрівна</strong></p>
+        <p>ІПН: 3057313947</p>
+        <p>м. Київ, б. В. Гавела 36б, кв. 109</p>
+        <p>Тел: 0932152405</p>
+        <p>Email: Eletskaya.83@gmail.com</p>
+
+        <p>
+          Повернення коштів відбувається у випадку якщо з моєї вини я не
+          зʼявляюсь на сесію та не попереджаю про це мінімум за 3 години до
+          сесії
+        </p>
+      </div>
+    </div>
+
+    <!-- TERMS MODAL -->
+    <div class="modal" id="termsModal">
+      <div class="modal-content">
+        <span class="close terms-close">&times;</span>
+        <h2>Правила та умови</h2>
+
+        <p>Оплата здійснюється до кожної сесії.</p>
+        <p>Можлива оплата за декілька сесій одразу.</p>
+        <p>Зміна часу та перенесення дати сесії можлива бажано за 24 години.</p>
+        <p>
+          Враховуючи форс мажорні обставини (світло, обстріли тощо), можливі
+          зміни часу сесій на зручний для обох сторін.
+        </p>
+      </div>
+    </div>
+
     <script>
       const burger = document.querySelector(".burger");
       const nav = document.querySelector(".nav");
@@ -547,6 +593,38 @@
           modal.classList.remove("show");
         }
       });
+
+      const contactsModal = document.getElementById("contactsModal");
+      const termsModal = document.getElementById("termsModal");
+
+      const openContacts = document.getElementById("openContacts");
+      const openTerms = document.getElementById("openTerms");
+
+      const closeContacts = document.querySelector(".contacts-close");
+      const closeTerms = document.querySelector(".terms-close");
+
+      openContacts.onclick = (e) => {
+        e.preventDefault();
+        contactsModal.classList.add("show");
+      };
+
+      openTerms.onclick = (e) => {
+        e.preventDefault();
+        termsModal.classList.add("show");
+      };
+
+      closeContacts.onclick = () => {
+        contactsModal.classList.remove("show");
+      };
+
+      closeTerms.onclick = () => {
+        termsModal.classList.remove("show");
+      };
+
+      window.onclick = (e) => {
+        if (e.target === contactsModal) contactsModal.classList.remove("show");
+        if (e.target === termsModal) termsModal.classList.remove("show");
+      };
     </script>
   </body>
 </html>

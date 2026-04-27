@@ -1066,3 +1066,63 @@ section {
   font-size: 15px;
   margin-bottom: 0;
 }
+
+.footer {
+  background: #f5f0e9;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #a8a8a8;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover {
+  color: #a8a8a8;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 15px;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .footer a {
+    font-size: 12px;
+    width: max-content;
+    margin: auto;
+  }
+}
+
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
