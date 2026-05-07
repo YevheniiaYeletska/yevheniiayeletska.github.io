@@ -373,12 +373,12 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: -4px 3px 27px -3px rgba(0, 0, 0, 0.75);
 }
 
 .social a:hover {
-  color: var(--gray);
+  opacity: 0.6;
 }
 
 .box-text {
@@ -411,7 +411,7 @@ table {
   box-shadow: -4px 3px 29px 4px rgba(0, 0, 0, 0.25);
   color: var(--white);
   padding: 12px 32px;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -706,6 +706,8 @@ section {
 
 .services-section .title {
   margin-top: 100px;
+  font-family: var(--font-main);
+  font-weight: 400;
 }
 
 .certs {
@@ -1125,4 +1127,101 @@ section {
 .modal-content {
   max-height: 80vh;
   overflow-y: auto;
+}
+
+.payment-block {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.payment-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.payment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.payment-card span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.payment-card h4 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+.payment-card p {
+  min-height: 120px;
+  color: #555;
+}
+
+.payment-card .btn {
+  width: 100%;
+}
+
+.payment-card.featured {
+  background: var(--beige);
+  transform: scale(1.03);
+}
+
+.payment-card.featured:hover {
+  transform: scale(1.03) translateY(-10px);
+}
+
+.badge {
+  position: absolute;
+  top: 38px;
+  right: -54px;
+  background: #d7d2b7;
+  color: rgb(111, 111, 111);
+  padding: 10px 50px;
+  transform: rotate(35deg);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.payment-card.large {
+  grid-column: span 2;
+}
+
+@media (max-width: 992px) {
+  .payment-card.large {
+    grid-column: span 1;
+  }
+
+  .payment-card p {
+    min-height: auto;
+  }
+  .payment-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .payment-block {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
 }
